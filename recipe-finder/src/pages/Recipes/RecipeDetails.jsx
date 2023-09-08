@@ -2,17 +2,23 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Grid, Button, Image, Header, Segment } from 'semantic-ui-react';
 
-import { getRecipe } from '../../services/api';
+import { getRecipeDetails } from '../../services/api';
 
 import * as S from './Recipes.styles';
 
+/**
+ * Recipe details page
+ */
 const RecipeDetails = () => {
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
 
+  /**
+   * Invokes api to fetch recipe detials
+   */
   useEffect(() => {
     const getData = async () => {
-      let result = await getRecipe(recipeId);
+      let result = await getRecipeDetails(recipeId);
       if (result && result.recipe) {
         setRecipe(result.recipe);
       }
@@ -22,7 +28,7 @@ const RecipeDetails = () => {
 
   return Object.keys(recipe).length > 0 ? (
     <S.Container>
-      <Grid container stackable columns={2} className="detailsPageContent">
+      <Grid container stackable columns={2} style={{ marginTop: 50 }}>
         <Grid.Column>
           <Button
             as={Link}

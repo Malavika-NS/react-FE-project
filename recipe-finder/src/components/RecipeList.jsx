@@ -1,6 +1,11 @@
 import { Container, Header, Grid } from 'semantic-ui-react';
+import { array, string } from 'prop-types';
+
 import RecipeListItem from './RecipeListItem';
 
+/**
+ * Recipe grid with list of recipes
+ */
 const RecipeList = ({ recipes, searchedQuery }) => {
   return (
     <Container>
@@ -18,6 +23,17 @@ const RecipeList = ({ recipes, searchedQuery }) => {
       </Grid>
     </Container>
   );
+};
+
+RecipeList.propTypes = {
+  /**
+   * Array of recipe detials
+   */
+  recipes: array,
+  /**
+   * User searched recipe term
+   */
+  searchedQuery: string,
 };
 
 export default RecipeList;

@@ -3,6 +3,10 @@ import { Menu } from 'semantic-ui-react';
 
 import logo from '../assets/logo.jpg';
 
+/**
+ * Navigation bar
+ * Contains navigation links
+ */
 const NavBar = () => {
   return (
     <Menu borderless fixed="top">

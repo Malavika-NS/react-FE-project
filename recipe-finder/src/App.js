@@ -6,8 +6,9 @@ import Home from './pages/Home/Home';
 import Recipes from './pages/Recipes/Recipes';
 import RecipeDetails from './pages/Recipes/RecipeDetails';
 
-import './App.css';
-
+/**
+ * Recipe finder application
+ */
 const App = () => {
   return (
     <Router>

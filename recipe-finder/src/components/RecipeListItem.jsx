@@ -1,7 +1,11 @@
-import { Button, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { Button, Card } from 'semantic-ui-react';
+import { object } from 'prop-types';
 import styled from 'styled-components';
 
+/**
+ * Styled Recipe Card
+ */
 const CardContainer = styled(Card)`
   height: 100%;
 
@@ -11,6 +15,10 @@ const CardContainer = styled(Card)`
   }
 `;
 
+/**
+ * Recipe card component
+ * Displays image, title and other details
+ */
 const RecipeListItem = ({ recipe }) => {
   return (
     <CardContainer>
@@ -40,6 +48,13 @@ const RecipeListItem = ({ recipe }) => {
       </Card.Content>
     </CardContainer>
   );
+};
+
+RecipeListItem.propTypes = {
+  /**
+   * Details about the recipe
+   */
+  recipe: object,
 };
 
 export default RecipeListItem;

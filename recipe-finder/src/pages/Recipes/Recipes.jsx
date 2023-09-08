@@ -8,6 +8,9 @@ import * as S from './Recipes.styles';
 
 const DEFAULT_SEARCH_TERM = 'tomato';
 
+/**
+ * Recipe Search Page
+ */
 const Recipes = () => {
   const searchTerm = localStorage.getItem('searchTerm');
 
@@ -16,12 +19,18 @@ const Recipes = () => {
   );
   const [recipes, setRecipes] = useState();
 
+  /**
+   * Invokes api to fetch recipe list on new search
+   */
   useEffect(() => {
-    getSearchedResult();
+    getRecipeList();
     localStorage.setItem('searchTerm', searchedQuery);
   }, [searchedQuery]);
 
-  const getSearchedResult = async () => {
+  /**
+   * Function to fetch recipe list
+   */
+  const getRecipeList = async () => {
     let result = await getRecipes(searchedQuery);
     if (result && result.recipes) {
       setRecipes(result.recipes);

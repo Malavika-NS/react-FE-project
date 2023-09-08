@@ -2,9 +2,16 @@ import { useState } from 'react';
 import { string, func } from 'prop-types';
 import { Form, Input } from 'semantic-ui-react';
 
+/**
+ * Search component
+ * Contains search bar for recipe search
+ */
 const Search = ({ setSearchedQuery, defaultSearchTerm }) => {
   const [value, setValue] = useState('');
 
+  /**
+   * sets searched term on submit
+   */
   const onFormSubmit = () => {
     setSearchedQuery(value);
   };
@@ -29,7 +36,13 @@ const Search = ({ setSearchedQuery, defaultSearchTerm }) => {
 };
 
 Search.propTypes = {
+  /**
+   * Function to set serched query
+   */
   setSearchedQuery: func,
+  /**
+   * searched term to display for placeholder
+   */
   defaultSearchTerm: string,
 };
 

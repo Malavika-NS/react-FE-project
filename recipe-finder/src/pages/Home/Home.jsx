@@ -3,6 +3,9 @@ import { Button } from 'semantic-ui-react';
 
 import * as S from './Home.styles.js';
 
+/**
+ * Home page
+ */
 const Home = () => {
   return (
     <S.BackgroundImage>
