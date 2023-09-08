@@ -15,8 +15,8 @@ const RecipeList = ({ recipes, searchedQuery }) => {
       </Header>
       <Grid columns={4} doubling>
         {recipes &&
-          recipes.map((recipe) => (
-            <Grid.Column>
+          recipes.map((recipe, index) => (
+            <Grid.Column key={`recipe-${index}`}>
               <RecipeListItem recipe={recipe} />
             </Grid.Column>
           ))}
