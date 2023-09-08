@@ -9,7 +9,7 @@ import logo from '../assets/logo.jpg';
  */
 const NavBar = () => {
   return (
-    <Menu borderless fixed="top">
+    <Menu borderless fixed="top" data-testid="navbar">
       <Menu.Item>
         <img
           src={logo}
