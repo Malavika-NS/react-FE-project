@@ -24,7 +24,7 @@ const RecipeDetails = () => {
       }
     };
     getData();
-  }, []);
+  }, [recipeId]);
 
   return Object.keys(recipe).length > 0 ? (
     <S.Container>

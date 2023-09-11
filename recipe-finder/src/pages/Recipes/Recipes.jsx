@@ -25,6 +25,7 @@ const Recipes = () => {
   useEffect(() => {
     getRecipeList();
     localStorage.setItem('searchTerm', searchedQuery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchedQuery]);
 
   /**
